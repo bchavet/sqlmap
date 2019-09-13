@@ -5,7 +5,7 @@ if ($id) {
     $mysqli = new mysqli("mysql", "tugboat", "tugboat", "tugboat");
     $result = $mysqli->query("select * from demo where id=$id");
     
-    echo $result;
+    echo $result->num_rows;
 } else {
-    echo 'OK';
+    echo '<a href="/index.php?id=1">GO</a>';
 }
