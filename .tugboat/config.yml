@@ -1,0 +1,6 @@
+services:
+    php:
+        image: tugboatqa/php:apache
+        default: true
+    mysql:
+        image: tugboatqa/mysql
