@@ -3,7 +3,9 @@ services:
         image: tugboatqa/php:apache
         default: true
         commands:
-            init: ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
+            init:
+                - docker-php-ext-install mysqli
+                - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
     mysql:
         image: tugboatqa/mysql:5
         commands:
