@@ -2,5 +2,7 @@ services:
     php:
         image: tugboatqa/php:apache
         default: true
+        commands:
+            init: ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
     mysql:
-        image: tugboatqa/mysql
+            image: tugboatqa/mysql:5
