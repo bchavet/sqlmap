@@ -8,6 +8,7 @@ services:
                 - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
     mysql:
         image: tugboatqa/mysql:5
+        checkout: true
         commands:
             init: zcat .tugboat/tugboat.sql.gz | mysql tugboat
 
